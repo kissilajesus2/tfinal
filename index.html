@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidraçaria HP</title>
+    
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    .fundo{
+        background-image: linear-gradient(45deg,black,crimson);
+        height: 100vh;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .calculadora{
+        position: absolute;
+        background-color: black;
+        top: 50%;
+        left: 35%;
+        transform: translate(50%,-50%);
+        border-radius: 15px;
+        padding: 15px;
+    }
+    .botao{
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        margin: 30px;
+        cursor: pointer;
+        background-color: rgb(31,31,31);
+        border: none;
+        color: white;
+        
+    }
+    .botao:hover{background-color: black;}
+    #resultado{ 
+        background-color: white;
+        width: 207px;
+        height: 30px;
+        margin: 5px;
+        font-size: 25px;
+        color: black;
+        text-align: right;
+        padding: 5px;
+    }
+</style>
+</head>
+<body>
+    <h1> Vidraçaria HP </h1>
+    <P>Somos uma empresa atuante no mercado de vidros há mais de 34 anos, realizando nossos serviços com agilidade, compromisso e principalmente, trazendo a qualidade que você merece.
+Trabalhando com vidros em geral, espelhos, molduras, jateados, box e fechamento de area.
+ Profissionais altamente qualificados para te atender da melhor forma!
+    <a href="menu.html"></a>
+    <div class="fundo">
+<div class=calculadora>
+<h1>calculadora</h1>
+<p id="resultado"></p>
+<table>
+    <tr>
+        <td class="botao" onclick="clean()"><button>C</button></td>
+        <td class="botao"><button><</button></td>
+        <td class="botao" onclick="insert('/')"><button>/</button></td>
+        <td class="botao" onclick="insert ('*')"><button>X</button></td>
+
+    </tr>
+    <tr>
+        <td class="botao" onclick="insert('7')"><button>7</button></td>
+        <td class="botao" onclick="insert('8')"><button>8</button></td>
+        <td class="botao" onclick="insert('9')"><button>9</button></td>
+        <td class="botao" onclick="insert('-')"><button>-</button></td>
+
+    </tr>
+    <tr>
+        <td class="botao" onclick="insert('4')"><button>4</button></td>
+        <td class="botao" onclick="insert('5')"><button>5</button></td>
+        <td class="botao" onclick="insert('6')"><button>6</button></td>
+        <td class="botao" onclick="insert('+')"><button>+</button></td>
+    </tr>
+    <tr>
+        <td class="botao" onclick="insert('1')"><button>1</button></td>
+        <td class="botao" onclick="insert('2')"><button>2</button></td>
+        <td class="botao" onclick="insert('3')"><button>3</button></td>
+        <td rowspan="2" onclick="insert(calcular)"><button>=</button></td>
+
+    </tr>
+    <tr>
+        <td colspan="2" style="width: 106px;" onclick="insert('0')"><button>0</button></td>
+        <td><button>.</button></td>
+
+    </tr>
+</table>
+
+    </div>
+    <script>
+        function insert(num){
+          var numero=  document.getElementById('resultado').innerHTML;
+          document.getElementById('resultado').innerHTML=numero+num;
+        }
+        function clean(){
+            document.getElementById('resultado').innerHTML="";
+        }
+        var resultado= document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML=resultado.substring(0,resultado.length -1)
+        function calcular()
+        {
+       
+        var resultado= document.getElementById('resultado').innerHTML;
+        if(resultado) }
+            { document.getElementById('resultado').innerHTML=eval(resultado)
+        }
+        
+    </script>
+</body>
+</html>
